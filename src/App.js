@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -19,25 +18,31 @@ constructor(){
   
         render() {
           return (
-            <div className="notesContainer">
+    <div className="notesContainer">
+
                       <div className="notesHeader">
                             <h1> React y Firebase App</h1>
                       </div>
-                            <div className="notesBody">
-                                 <ul>
-                                 {
-                                    this.state.notes.map( note => {
-                                      return(
-                                          <li key={note.noteId}>{note.noteContent}</li>  
-                                      )
-                                    })
-                                  }
-                                 </ul>
-                            </div>
+                      
+                      <div className="notesBody">
+                                    <ul>
+                                    {
+                                        this.state.notes.map( note => {
+                                          return(
+                                            <Note 
+                                            noteContent={note.noteContent}
+                                            noteId= {note.noteId}
+                                            key={note.noteId}
+                                           / >  
+                                          )
+                                        })
+                                      }
+                                    </ul>
+                      </div>
                     <div className="notesFooter">
 
                     </div>
-            </div>
+   </div>
           );
         }
       }
