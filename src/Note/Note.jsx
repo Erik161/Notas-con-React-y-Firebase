@@ -1,17 +1,26 @@
-import React, {component}from 'react';
-import './Node.css';
-import Note from './Note/Note'
+import React, {Component} from 'react';
+import './Note.css';
 
-class Note extends component{
+
+
+class Note extends Component{
     constructor(props){
         super(props);
         this.noteContent = props.noteContent;
-        this.noteId = props.noteContent;
+        this.noteId = props.noteId;
+    }
+
+    handleRemove(id){
+        console.log(id); 
+        alert('remove:', id)
     }
     render(){
        return(
         <div cassName="Note">
-        <li>{this.noteId}-{this.noteContent}</li>
+        <span
+        onClick={() => this.handleRemove(this.noteId)  }
+        >&times;</span>
+        <p> {this.noteContent}</p>
        </div>
 
        )

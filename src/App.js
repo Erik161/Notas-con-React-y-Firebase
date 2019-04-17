@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Note from './Note/Note';
+import NoteForm from './NoteForm/NoteForm';
+
 class App extends Component {
 //como guardar notas 
 constructor(){
@@ -15,35 +18,45 @@ constructor(){
     ] 
   };
 }
-  
+
+removeNote(){
+
+}
+
+
         render() {
-          return (
-    <div className="notesContainer">
+        return(
+          <div className="notesContainer" >
 
-                      <div className="notesHeader">
-                            <h1> React y Firebase App</h1>
-                      </div>
-                      
-                      <div className="notesBody">
-                                    <ul>
-                                    {
-                                        this.state.notes.map( note => {
-                                          return(
-                                            <Note 
-                                            noteContent={note.noteContent}
-                                            noteId= {note.noteId}
-                                            key={note.noteId}
-                                           / >  
-                                          )
-                                        })
-                                      }
-                                    </ul>
-                      </div>
-                    <div className="notesFooter">
+            <div className="notesHeader" >
+            <h1>React Y Firebase App </h1>
+            </div>
+          
+            <div className="notesBody">
+            <ul>
+            {
+              this.state.notes.map(note => {
+                return(
+                  <Note 
+                    noteContent={note.noteContent}
+                    noteId={note.noteId}
+                    key={note.noteId}
+        
+                  />
+                )
+              } )
+            }
+            
+            </ul>
+            </div>
 
-                    </div>
-   </div>
-          );
+            <div className="notesFooter">
+            
+            </div>
+
+
+          </div>
+        );
         }
       }
 
