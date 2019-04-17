@@ -3,9 +3,10 @@ import './Node.css';
 import Note from './Note/Note'
 
 class Note extends component{
-    constructor(){
-
-        super();
+    constructor(props){
+        super(props);
+        this.noteContent = props.noteContent;
+        this.noteId = props.noteContent;
     }
     render(){
        return(
