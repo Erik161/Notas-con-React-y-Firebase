@@ -1,21 +1,31 @@
-import React, {Component}   from 'react';
+import React, {Component} from 'react';
 import './NoteForm.css';
 
 class NoteForm extends Component{
-    constructor(){
-
+   constructor(){
+    super();
     }
 
-    render(){
-        <div className="NoteForm" >
-            <input type="text" >
-                <button>
-                Add Note
-                </button>
-            </input>
-        </div>
-    }
+addNote(){
 
 }
 
+    render(){
+       return(
+        <div className="NoteForm" >
+        <input 
+         placeholder="Write a note"
+
+        type="text" >
+            <button
+            onClick={this.addNote}
+            >
+            Add Note
+            </button>
+        </input>
+    </div>
+       )
+    }
+
+}
 export default NoteForm;
